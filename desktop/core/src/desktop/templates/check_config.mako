@@ -15,14 +15,8 @@
 ## limitations under the License.
 <%!
 from desktop.lib.conf import BoundConfig
-from desktop.views import commonheader, commonfooter
 from django.utils.translation import ugettext as _
 %>
-
-<%namespace name="layout" file="about_layout.mako" />
-${ commonheader(_('About'), "about", user, "100px") | n,unicode }
-
-${layout.menubar(section='check_config')}
 
 <div class="container-fluid">
     ${_('Configuration files located in')} <code>${conf_dir}</code>
@@ -56,5 +50,3 @@ ${layout.menubar(section='check_config')}
       <h2>${_('All OK. Configuration check passed.')}</h2>
     % endif
 </div>
-
-${ commonfooter(messages) | n,unicode }

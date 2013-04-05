@@ -352,6 +352,7 @@ def check_config(request):
   """Check config and view for the list of errors"""
   if not request.user.is_superuser:
     return HttpResponse(_("You must be a superuser."))
+
   conf_dir = os.path.realpath(get_desktop_root('conf'))
   return render('check_config.mako', request, dict(
                     error_list=_get_config_errors(cache=False),
